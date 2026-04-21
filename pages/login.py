@@ -2,7 +2,7 @@ import streamlit as st
 
 conn = st.connection('postgresql', type='sql')
 
-st.title("Добро пожаловать в Тренажер")
+#st.title("Добро пожаловать в Тренажер")
 
 tab_login, tab_reg = st.tabs(["Вход", "Регистрация"])
 
