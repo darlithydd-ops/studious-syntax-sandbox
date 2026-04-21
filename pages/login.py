@@ -1,7 +1,6 @@
 import streamlit as st
 
-# Подключение к БД (данные берутся из Secrets)
-conn = st.connection("postgresql", type="sql")
+conn = st.connection('postgresql', type='sql')
 
 st.title("Добро пожаловать в Тренажер")
 
