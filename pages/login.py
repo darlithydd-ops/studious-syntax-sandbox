@@ -9,21 +9,22 @@ tab_login, tab_reg = st.tabs(["Вход", "Регистрация"])
 with tab_login:
     left_col, right_col = st.columns([0.3, 0.7])
     with left_col:
-        login_input = st.text_input("Логин")
-        pass_input = st.text_input("Пароль", type="password")
-        if st.button("Войти"):
-            user = conn.query(
-                "SELECT id, full_name FROM users WHERE login = :l AND password_hash = :p",
-                params={"l": login_input, "p": pass_input}
-            )
-            if not user.empty:
-                st.session_state.logged_in = True
-                st.session_state.user_name = user['full_name'].iloc[0]
-                st.session_state.user_id = int(user['id'].iloc[0])
-                st.success("Успешный вход!")
-                st.rerun()
-            else:
-                st.error("Неверный логин или пароль")
+        with st.container(border=True):
+            login_input = st.text_input("Логин")
+            pass_input = st.text_input("Пароль", type="password")
+            if st.button("Войти"):
+                user = conn.query(
+                    "SELECT id, full_name FROM users WHERE login = :l AND password_hash = :p",
+                    params={"l": login_input, "p": pass_input}
+                )
+                if not user.empty:
+                    st.session_state.logged_in = True
+                    st.session_state.user_name = user['full_name'].iloc[0]
+                    st.session_state.user_id = int(user['id'].iloc[0])
+                    st.success("Успешный вход!")
+                    st.rerun()
+                else:
+                    st.error("Неверный логин или пароль")
 
 with tab_reg:
     st.subheader("Создание аккаунта")
