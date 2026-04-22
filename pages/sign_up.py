@@ -20,4 +20,6 @@ with center_col:
         selected_full_name = st.selectbox('Полное имя',
                                           options=df_students['full_name'],
                                           index=1)
+        
+        email = st.text_input("Введите ваше имя", placeholder="Иван Иванов")
   
