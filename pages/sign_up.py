@@ -8,7 +8,7 @@ left_col, center_col, right_col = st.columns([0.35, 0.3, 0.35])
 with center_col:
     with st.container(border=True):
 
-        st.markdown("<h2 style='text-align: center;'>   Python Gym</h2>", 
+        st.markdown("<h2 style='text-align: center;'>Python Gym</h2>", 
                     unsafe_allow_html=True)
         
         df_groups = conn.query('SELECT id, name FROM groups ORDER BY name;')
@@ -34,7 +34,7 @@ with center_col:
             email_input = raw_email_input.strip()
             if not re.match(email_pattern, email_input):
                 st.error('Неверный формат электронной почты')
-        #if st.button('
+        if st.button('
 
             
  
