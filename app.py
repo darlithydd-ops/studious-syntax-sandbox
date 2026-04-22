@@ -15,7 +15,7 @@ trainer_page = st.Page('pages/trainer.py', title='Тренажер', icon='🐍'
 if st.session_state.logged_in:
     pg = st.navigation([trainer_page])
 else:
-    if session_state.sign_up_button_pushed:
+    if st.session_state.sign_up_button_pushed:
         pg = st.navigation([sign_up_page])
     else:
         pg = st.navigation([login_page])
