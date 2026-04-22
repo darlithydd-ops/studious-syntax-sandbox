@@ -38,9 +38,10 @@ with center_col:
         
         if st.button('Отправить код верификации', width='stretch'):
 
-            subject = 'Код верификации'
-            content = f'Ваш код верификации электронной почты в Python Gym {1234}'
-            success = utils.send_email(email_input, content, subject)
+            with st.spinner():
+                subject = 'Код верификации'
+                content = f'Ваш код верификации электронной почты в Python Gym {1234}'
+                success = utils.send_email(email_input, content, subject)
             
             with st.form('jhn'):
                 c_1, c_2, c_4, c_6, c_8, c_9 = st.columns([1, 1, 1, 1, 1, 1])
