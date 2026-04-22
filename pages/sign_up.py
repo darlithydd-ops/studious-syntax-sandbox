@@ -1,5 +1,6 @@
-import streamlit as st
 import re
+import utils
+import streamlit as st
 
 conn = st.connection('postgresql', type='sql')
 
@@ -34,7 +35,13 @@ with center_col:
             email_input = raw_email_input.strip()
             if not re.match(email_pattern, email_input):
                 st.error('Неверный формат электронной почты')
+        
         if st.button('Отправить код верификации', width='stretch'):
+
+            subject = 'Код верификации'
+            content = f'Ваш код верификации электронной почты в Python Gym\n {1234}'
+            success = utils.send_email(email_input, content, subject)
+            
             with st.form('jhn'):
                 c_1, c_2, c_4, c_6, c_8, c_9 = st.columns([1, 1, 1, 1, 1, 1])
                 with c_2:
