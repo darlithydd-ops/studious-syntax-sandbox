@@ -6,8 +6,8 @@ def send_email(receiver_email, content, subject):
     
     smtp_port = 465
     smtp_server = st.secrets['emails']['smtp_server']
-    sender_email = st.secrets['emails']['user']
-    sender_password = st.secrets['emails']['password']
+    sender_email = st.secrets['emails']['smtp_user']
+    sender_password = st.secrets['emails']['smtp_password']
 
     msg = EmailMessage()
     msg.set_content(content)
