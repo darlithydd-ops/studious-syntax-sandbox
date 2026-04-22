@@ -6,7 +6,7 @@ left_col, center_col, right_col = st.columns([0.35, 0.3, 0.35])
 
 with center_col:
     with st.container(border=True):
-        with st.expander():
+        with st.expander('Группа'):
             df_groups = conn.query('SELECT name FROM groups ORDER BY name;')
             selected_group = st.selectbox("Выберите группу для работы:",
                                           options=df_groups['name'],
