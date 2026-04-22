@@ -56,7 +56,7 @@ with center_col:
                     digit_4 = st.text_input('digit_4', label_visibility='collapsed', 
                                             max_chars=1, 
                                             key='d4')
-            
+                submitted = st.form_submit_button("Подтвердить код")
  
         
   
