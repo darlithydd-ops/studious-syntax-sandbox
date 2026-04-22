@@ -15,7 +15,7 @@ with center_col:
         if selected_group:
             selected_group_id = df_groups.loc[df_groups['name'] == selected_group, 'id'].values[0]
             query = 'SELECT full_name FROM users WHERE group_id = :g_id ORDER BY full_name;'
-            df_students = conn.query(query, params={'g_id': int(selected_group_id}))
+            df_students = conn.query(query, params={'g_id': int(selected_group_id)})
             selected_full_name = st.selectbox('Полное имя',
                                               options=df_students['full_name'],
                                               index=None,
