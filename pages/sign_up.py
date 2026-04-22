@@ -34,8 +34,8 @@ with center_col:
             email_input = raw_email_input.strip()
             if not re.match(email_pattern, email_input):
                 st.error('Неверный формат электронной почты')
-        if st.button('
-
+        if st.button('Отправить код верификации', width='stretch'):
+            pass
             
  
         
