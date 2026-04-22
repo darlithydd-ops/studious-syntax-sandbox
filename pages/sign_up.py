@@ -26,11 +26,11 @@ with center_col:
                                         placeholder='example@mail.com', 
                                         icon=':material/mail:')
         
-        email_pattern = r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$'
-        email_input = raw_email_input.strip()
-        
-        if not re.match(email_pattern, email_input):
-            st.error('Неверный формат электронной почты')
+        if raw_email_input:
+            email_pattern = r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$'
+            email_input = raw_email_input.strip()
+            if not re.match(email_pattern, email_input):
+                st.error('Неверный формат электронной почты')
             
  
         
