@@ -7,8 +7,8 @@ left_col, center_col, right_col = st.columns([0.35, 0.3, 0.35])
 with center_col:
     with st.container(border=True):
         st.markdown("<h2 style='text-align: center;'>Python Gym</h2>", unsafe_allow_html=True)
-        login_inpu = st.text_input("Логин", placeholder="Введите ваш логин", icon=":material/person:")
-        pass_input = st.text_input("Пароль", type="password", placeholder="Введите пароль", icon=":material/lock:")
+        login_inpu = st.text_input('Логин', placeholder='Введите ваш логин', icon=':material/person:')
+        pass_input = st.text_input('Пароль', type='password', placeholder='Введите пароль', icon=':material/lock:')
         if st.button('Войти', width='stretch'):
             user = conn.query(
             "SELECT id, full_name FROM users WHERE login = :l AND password_hash = :p",
