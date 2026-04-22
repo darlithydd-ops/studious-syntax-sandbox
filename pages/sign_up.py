@@ -1,6 +1,6 @@
 import re
-import utils
 import streamlit as st
+from utils import generate_verification_code, send_email
 
 conn = st.connection('postgresql', type='sql')
 
@@ -40,9 +40,9 @@ with center_col:
 
             with st.spinner('Отправка письма ...'):
                 subject = 'Код верификации'
-                code = utils.generate_verification_code()
+                code = generate_verification_code()
                 content = f'Ваш код верификации электронной почты в Python Gym {code}'
-                success = utils.send_email(email_input, content, subject)
+                success = send_email(email_input, content, subject)
             
             with st.form('jhn'):
                 c_1, c_2, c_4, c_6, c_8, c_9 = st.columns([1, 1, 1, 1, 1, 1])
