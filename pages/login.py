@@ -30,6 +30,13 @@ with center_col:
                 st.rerun()
             else:
                 st.error("Неверный логин или пароль")
+        st.markdown("""
+            <style>
+                hr {
+                    margin-top: 1rem !important;   /* Отступ сверху */
+                    margin-bottom: 1rem !important; /* Отступ снизу */}
+            </style>""",
+            unsafe_allow_html=True)
         st.divider()
         if st.button('Создать аккаунт', width='stretch'):
             pass
