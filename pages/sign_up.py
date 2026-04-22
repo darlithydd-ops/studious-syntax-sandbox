@@ -9,7 +9,7 @@ with center_col:
     with st.container(border=True):
 
         st.markdown("<h2 style='text-align: center;'>Python Gym</h2>", 
-                    unsafe_allow_html=True)
+                    unsafe_allow_html=False)
         
         df_groups = conn.query('SELECT id, name FROM groups ORDER BY name;')
         
