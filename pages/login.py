@@ -27,3 +27,4 @@ with center_col:
         if st.button('Создать аккаунт', width='stretch'):
             pass
         if st.button('Востановить доступ', width='stretch'):
+            pass
