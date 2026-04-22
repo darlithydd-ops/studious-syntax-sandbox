@@ -8,7 +8,7 @@ with center_col:
     with st.container(border=True):
         st.markdown("<h2 style='text-align: center;'>Python Gym</h2>", 
                     unsafe_allow_html=True)
-        login_inpu = st.text_input('Логин', 
+        login_input = st.text_input('Логин', 
                                    placeholder='Введите ваш логин', 
                                    icon=':material/person:',
                                    label_visibility='collapsed')
