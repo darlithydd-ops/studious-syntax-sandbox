@@ -10,6 +10,7 @@ with tab_login:
     left_col, right_col = st.columns([0.3, 0.7])
     with left_col:
         with st.container(border=True):
+            st.header('Python Sandbox')
             login_input = st.text_input("Логин")
             pass_input = st.text_input("Пароль", type="password")
             if st.button("Войти"):
