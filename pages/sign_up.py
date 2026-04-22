@@ -1,4 +1,5 @@
 import streamlit as st
+import re
 
 conn = st.connection('postgresql', type='sql')
 
@@ -21,9 +22,16 @@ with center_col:
                                           options=df_students['full_name'],
                                           index=1)
         
-        email_input = st.text_input('Электронная почта (необходима для восстановления доступа к приложению)',  
-                                   placeholder='example@mail.com', 
-                                   icon=':material/mail:')
+        raw_email_input = st.text_input('Электронная почта (необходима для восстановления доступа к приложению)',  
+                                        placeholder='example@mail.com', 
+                                        icon=':material/mail:')
+        
+        email_pattern = r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$'
+        email_input = raw_email_input.strip()
+        
+        if not re.match(pattern, email_input):
+            st.error('Неверный формат электронной почты')
+            
  
         
   
