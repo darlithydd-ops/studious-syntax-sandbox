@@ -36,23 +36,23 @@ with center_col:
                 st.error('Неверный формат электронной почты')
         if st.button('Отправить код верификации', width='stretch'):
             with st.form('jhn'):
-                col_1, col_2, col_3, col_4 = st.columns([1, 1, 1, 1])
-                with col_1:
+                c_1, c_2, c_3, c_4, c_5, c_6, c_7, c_8, c_9 = st.columns([1, 1, 1, 1, 1, 1, 1, 1, 1])
+                with c_2:
                     digit_1 = st.text_input('digit_1', 
                                             label_visibility='collapsed', 
                                             max_chars=1, 
                                             key='d1')
-                with col_2:
+                with c_4:
                     digit_2 = st.text_input('digit_2', 
                                             label_visibility='collapsed', 
                                             max_chars=1, 
                                             key='d2')
-                with col_3:
+                with c_6:
                     digit_3 = st.text_input('digit_3', 
                                             label_visibility='collapsed', 
                                             max_chars=1, 
                                             key='d3')
-                with col_4:
+                with col_8:
                     digit_4 = st.text_input('digit_4', label_visibility='collapsed', 
                                             max_chars=1, 
                                             key='d4')
