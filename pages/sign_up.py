@@ -19,5 +19,5 @@ with center_col:
             
         selected_full_name = st.selectbox('Полное имя',
                                           options=df_students['full_name'],
-                                          index=None)
+                                          index=1)
   
