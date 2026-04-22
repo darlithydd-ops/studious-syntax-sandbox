@@ -39,8 +39,7 @@ with center_col:
             unsafe_allow_html=True)
         st.divider()
         if st.button('Создать аккаунт', width='stretch'):
-            pg = st.navigation([sign_up_page])
-            pg.run()
+            st.session_state.sign_up_button_pushed = True
         st.markdown("---")
         if st.button('Востановить доступ', width='stretch'):
             pass
