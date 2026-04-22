@@ -23,3 +23,7 @@ with center_col:
                 st.rerun()
             else:
                 st.error("Неверный логин или пароль")
+        st.divider()
+        if st.button('Создать аккаунт', width='stretch'):
+            pass
+        if st.button('Востановить доступ', width='stretch'):
