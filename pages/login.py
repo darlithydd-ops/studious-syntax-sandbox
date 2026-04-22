@@ -11,6 +11,7 @@ with tab_login:
     with left_col:
         with st.container(border=True):
             st.header('Python Sandbox')
+            st.markdown("<h3 style='text-align: center;'>Python Sandbox H3</h3>", unsafe_allow_html=True)
             login_input = st.text_input("Логин")
             pass_input = st.text_input("Пароль", type="password")
             if st.button("Войти"):
