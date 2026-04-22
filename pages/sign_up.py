@@ -29,7 +29,7 @@ with center_col:
         email_pattern = r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$'
         email_input = raw_email_input.strip()
         
-        if not re.match(pattern, email_input):
+        if not re.match(email_pattern, email_input):
             st.error('Неверный формат электронной почты')
             
  
