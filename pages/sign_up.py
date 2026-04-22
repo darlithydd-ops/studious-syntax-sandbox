@@ -13,7 +13,7 @@ with center_col:
                                       placeholder='Группа',
                                       label_visibility='collapsed')
         query = 'SELECT full_name FROM users WHERE group_id = :g_id ORDER BY full_name;'
-        selected_group_id = df.loc[df['name'] == selected_group, 'id'].values[0]
+        selected_group_id = df_groups.loc[df_groups['name'] == selected_group, 'id'].values[0]
         df_students = conn.query(query, params={'g_id': selected_group_id})
         selected_full_name = st.selectbox('Полное имя',
                                       options=df_students['full_name'],
