@@ -40,6 +40,7 @@ with center_col:
         st.divider()
         if st.button('Создать аккаунт', width='stretch'):
             st.session_state.sign_up_button_pushed = True
+            st.rerun()
         st.markdown("---")
         if st.button('Востановить доступ', width='stretch'):
             pass
