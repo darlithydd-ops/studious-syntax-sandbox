@@ -52,7 +52,7 @@ with center_col:
                                             label_visibility='collapsed', 
                                             max_chars=1, 
                                             key='d3')
-                with col_8:
+                with c_8:
                     digit_4 = st.text_input('digit_4', label_visibility='collapsed', 
                                             max_chars=1, 
                                             key='d4')
