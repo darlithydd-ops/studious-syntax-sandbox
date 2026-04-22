@@ -21,5 +21,9 @@ with center_col:
                                           options=df_students['full_name'],
                                           index=1)
         
-        email = st.text_input("Введите ваше имя", placeholder="Иван Иванов")
+        email_input = st.text_input('Электронная почта (необходима для востановления доступа)', 
+                                   type='password', 
+                                   placeholder='Введите ваш пароль', 
+                                   icon=':material/lock:')
+        
   
