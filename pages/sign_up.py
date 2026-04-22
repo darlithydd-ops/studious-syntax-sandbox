@@ -22,7 +22,7 @@ with center_col:
                                           options=df_students['full_name'],
                                           index=1)
         
-        raw_email_input = st.text_input('Электронная почта (необходима для восстановления доступа к приложению)',  
+        raw_email_input = st.text_input('Почта (необходима для восстановления доступа к приложению)',  
                                         placeholder='example@mail.com', 
                                         icon=':material/mail:')
         
@@ -31,6 +31,8 @@ with center_col:
             email_input = raw_email_input.strip()
             if not re.match(email_pattern, email_input):
                 st.error('Неверный формат электронной почты')
+        #if st.button('
+
             
  
         
