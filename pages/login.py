@@ -33,7 +33,7 @@ with center_col:
         st.markdown("""
             <style>
                 hr {
-                    margin-top: 1rem !important;   /* Отступ сверху */
+                    margin-top: 0rem !important;   /* Отступ сверху */
                     margin-bottom: 1rem !important; /* Отступ снизу */}
             </style>""",
             unsafe_allow_html=True)
