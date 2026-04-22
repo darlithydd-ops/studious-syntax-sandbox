@@ -40,7 +40,8 @@ with center_col:
 
             with st.spinner('Отправка письма ...'):
                 subject = 'Код верификации'
-                content = f'Ваш код верификации электронной почты в Python Gym {1234}'
+                code = utils.generate_verification_code()
+                content = f'Ваш код верификации электронной почты в Python Gym {code}'
                 success = utils.send_email(email_input, content, subject)
             
             with st.form('jhn'):
