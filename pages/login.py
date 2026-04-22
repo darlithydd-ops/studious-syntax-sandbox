@@ -40,6 +40,7 @@ with center_col:
         st.divider()
         if st.button('Создать аккаунт', width='stretch'):
             pg = st.navigation([sign_up_page])
+            pg.run()
         st.markdown("---")
         if st.button('Востановить доступ', width='stretch'):
             pass
