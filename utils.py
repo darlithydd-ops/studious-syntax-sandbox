@@ -1,4 +1,6 @@
+import string
 import smtplib
+import secrets
 import streamlit as st
 from email.message import EmailMessage
 
@@ -22,3 +24,7 @@ def send_email(receiver_email, content, subject):
         return True
     except Exception:
         return False
+
+def generate_verification_code():
+    
+    return ''.join(secrets.choice(string.digits) for _ in range(4))
