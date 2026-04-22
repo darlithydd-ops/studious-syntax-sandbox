@@ -33,5 +33,6 @@ with center_col:
         st.divider()
         if st.button('Создать аккаунт', width='stretch'):
             pass
+        st.divider()
         if st.button('Востановить доступ', width='stretch'):
             pass
