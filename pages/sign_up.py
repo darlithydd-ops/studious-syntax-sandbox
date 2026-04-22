@@ -38,7 +38,7 @@ with center_col:
         
         if st.button('Отправить код верификации', width='stretch'):
 
-            with st.spinner():
+            with st.spinner('Отправка письма ...'):
                 subject = 'Код верификации'
                 content = f'Ваш код верификации электронной почты в Python Gym {1234}'
                 success = utils.send_email(email_input, content, subject)
