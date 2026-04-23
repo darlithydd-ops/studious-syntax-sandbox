@@ -55,34 +55,27 @@ def apply_comic_style(text, size=40, color='#FF4B4B', center=True):
         color: {color} !important;
         text-align: {align} !important;
         font-weight: 700 !important;
-        margin: 10px 0px;
-    }}
+        margin: 10px 0px;}}
     </style>
     <div class='comic-container'>{text}</div>
     """
     st.markdown(style, unsafe_allow_html=True)
 
-def st_pixel(text, size=20, color="#00FF00", center=True):
-    align = "center" if center else "left"
-    st.markdown(
-        f"""
-        <style>
-        /* Импорт должен быть в самом верху блока style */
-        @import url('https://googleapis.com');
-        
-        .pixel-label {{
-            font-family: 'Press Start 2P', system-ui !important;
-            font-size: {size}px !important;
-            color: {color} !important;
-            text-align: {align} !important;
-            display: block !important;
-            width: 100%;
-        }}
-        </style>
-        <span class="pixel-label">{text}</span>
-        """,
-        unsafe_allow_html=True
-    )
+def apply_pixel_style(text, size=20, color='#FF4B4B', center=True):
+    align = 'center' if center else 'left'
+    style = f"""
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    .pixel-container {{
+        font-family: 'Press Start 2P', monospace !important;
+        font-size: {size}px !important;
+        color: {color} !important;
+        text-align: {align} !important;
+        line-height: 1.5 !important;}}
+    </style>
+    <div class='pixel-container'>{text}</div>
+    """
+    st.markdown(style, unsafe_allow_html=True)
     
 def apply_caveat_style(text, size=40, color='#FF4B4B', center=True):
     align = 'center' if center else 'left'
@@ -95,8 +88,7 @@ def apply_caveat_style(text, size=40, color='#FF4B4B', center=True):
         color: {color} !important;
         text-align: {align} !important;
         font-weight: 700 !important;
-        margin: 10px 0px;
-    }}
+        margin: 10px 0px;}}
     </style>
     <div class='caveat-container'>{text}</div>
     """
