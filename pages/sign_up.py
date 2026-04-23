@@ -38,7 +38,7 @@ with center_col:
                 st_error_centered('Неверный формат электронной почты')
             else:
                 if 'email_completed' not in st.session_state:
-                st.session_state.email_completed = True
+                    st.session_state.email_completed = True
         
         if st.button('Отправить код верификации', width='stretch'):
             if not st.session_state.email_completed:
