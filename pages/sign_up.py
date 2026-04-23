@@ -51,11 +51,13 @@ with center_col:
                                            label_visibility='collapsed',
                                            max_chars=4)
         user_login = st.text_input('Придумайте имя пользователя',  
-                                        placeholder='Придумайте имя пользователя', 
-                                        icon=':material/person:')
+                                   placeholder='Придумайте имя пользователя', 
+                                   icon=':material/person:',
+                                   label_visibility='collapsed')
         user_password = st.text_input('Установите пароль',  
-                                        placeholder='Установите пароль', 
-                                        icon=':material/lock:')
+                                      placeholder='Установите пароль', 
+                                      icon=':material/lock:',
+                                      label_visibility='collapsed')
         if st.button('Создать аккаунт', width='stretch'):
             pass
 
