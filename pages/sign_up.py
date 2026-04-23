@@ -16,9 +16,7 @@ with center_col:
         
         selected_group = st.selectbox('Группа',
                                       options=df_groups['name'],
-                                      index=None,
-                                      placeholder='Группа',
-                                      label_visibility='collapsed')
+                                      index=0)
         
         selected_group_id = df_groups.loc[df_groups['name'] == selected_group, 'id'].values[0]
         query = 'SELECT full_name FROM users WHERE group_id = :g_id ORDER BY full_name;'
