@@ -44,9 +44,12 @@ with center_col:
                 content = f'Ваш код верификации электронной почты в Python Gym {code}'
                 success = send_email(email_input, content, subject)
             
-            code_input = st.text_input('Код', 
-                                 label_visibility='collapsed',
-                                 max_chars=4)
+            left_col, center_col, right_col = st.columns([1, 1, 1])
+            with center_col:
+                code_input = st.text_input('Код', 
+                                           label_visibility='collapsed',
+                                           max_chars=4)
+            
 
 
 
