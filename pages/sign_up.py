@@ -22,7 +22,7 @@ with center_col:
         query = 'SELECT full_name FROM users WHERE group_id = :g_id ORDER BY full_name;'
         df_students = conn.query(query, params={'g_id': int(selected_group_id)})
             
-        selected_full_name = st.selectbox('Имя',
+        selected_full_name = st.selectbox('Полное имя',
                                           options=df_students['full_name'],
                                           index=0)
         
