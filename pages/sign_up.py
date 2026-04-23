@@ -4,6 +4,9 @@ from utils import generate_verification_code, send_email, apply_otp_style
 from utils import apply_caveat_style, apply_comic_style, apply_pixel_style
 from utils import st_error_centered
 
+if 'email_completed' not in st.session_state:
+    st.session_state.email_completed = False
+
 conn = st.connection('postgresql', type='sql')
 
 left_col, center_col, right_col = st.columns([0.35, 0.3, 0.35])
@@ -37,8 +40,7 @@ with center_col:
             if not re.match(email_pattern, user_email):
                 st_error_centered('Неверный формат электронной почты')
             else:
-                if 'email_completed' not in st.session_state:
-                    st.session_state.email_completed = True
+                st.session_state.email_completed = True
         
         if st.button('Отправить код верификации', width='stretch'):
             if not st.session_state.email_completed:
