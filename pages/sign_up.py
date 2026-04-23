@@ -46,7 +46,7 @@ with center_col:
             
             left_col, center_col, right_col = st.columns([1, 1, 1])
             with center_col:
-                apply_otp_style()
+                apply_otp_style('Код')
                 code_input = st.text_input('Код', 
                                            label_visibility='collapsed',
                                            max_chars=4)
