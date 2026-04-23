@@ -1,6 +1,6 @@
 import re
 import streamlit as st
-from utils import generate_verification_code, send_email
+from utils import generate_verification_code, send_email, apply_otp_style()
 
 conn = st.connection('postgresql', type='sql')
 
@@ -46,6 +46,7 @@ with center_col:
             
             left_col, center_col, right_col = st.columns([1, 1, 1])
             with center_col:
+                apply_otp_style()
                 code_input = st.text_input('Код', 
                                            label_visibility='collapsed',
                                            max_chars=4)
