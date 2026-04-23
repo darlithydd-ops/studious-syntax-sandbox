@@ -65,35 +65,25 @@ def st_funny(text, size=40, color="#FF4B4B", center=True):
     """
     st.markdown(style, unsafe_allow_html=True)
 
-import streamlit as st
-
-def st_pixel(text, size=20, color="#00FF00", center=True, shadow=True):
-    """
-    Выводит текст в стиле ретро-игр (8-bit).
-    - shadow: добавляет небольшой эффект тени для объема.
-    """
+def st_pixel(text, size=20, color="#00FF00", center=True):
     align = "center" if center else "left"
-    # Эффект тени, если shadow=True
-    text_shadow = "2px 2px #000000" if shadow else "none"
-    
     st.markdown(
         f"""
         <style>
+        /* Импорт должен быть в самом верху блока style */
         @import url('https://googleapis.com');
         
-        .pixel-text {{
-            font-family: 'Press Start 2P', cursive;
-            font-size: {size}px;
-            color: {color};
-            text-align: {align};
-            text-shadow: {text_shadow};
-            line-height: 1.5;
-            margin: 20px 0px;
+        .pixel-label {{
+            font-family: 'Press Start 2P', system-ui !important;
+            font-size: {size}px !important;
+            color: {color} !important;
+            text-align: {align} !important;
+            display: block !important;
+            width: 100%;
         }}
         </style>
-        <p class="pixel-text">{text}</p>
+        <span class="pixel-label">{text}</span>
         """,
         unsafe_allow_html=True
     )
-
 
