@@ -94,7 +94,7 @@ def apply_caveat_style(text, size=40, color='#FF4B4B', center=True):
     """
     st.markdown(style, unsafe_allow_html=True)
 
-def centered_error(text):
+def st_error_centered(text):
     style = """
     <style>
     div[data-testid="stAlert"] {
