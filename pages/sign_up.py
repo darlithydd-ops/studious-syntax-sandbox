@@ -22,9 +22,9 @@ with center_col:
         query = 'SELECT full_name FROM users WHERE group_id = :g_id ORDER BY full_name;'
         df_students = conn.query(query, params={'g_id': int(selected_group_id)})
             
-        selected_full_name = st.selectbox('Полное имя',
+        selected_full_name = st.selectbox('Имя',
                                           options=df_students['full_name'],
-                                          index=1)
+                                          index=о)
         
         raw_email_input = st.text_input('Почта (необходима для восстановления доступа)',  
                                         placeholder='example@mail.com', 
