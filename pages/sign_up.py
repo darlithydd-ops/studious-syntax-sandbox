@@ -66,8 +66,9 @@ with center_col:
                                             label_visibility='collapsed', 
                                             max_chars=1, 
                                             key='opt_4')
-                add_otp_focus_script()
+                
                 submitted = st.form_submit_button("Подтвердить код")
+                add_otp_focus_script()
  
         
   
