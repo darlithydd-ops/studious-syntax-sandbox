@@ -34,8 +34,6 @@ with center_col:
         if raw_user_email:
             email_pattern = r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$'
             user_email = raw_user_email.strip()
-            if 'email_completed' not in st.session_state:
-                st.session_state.email_completed = True
             if not re.match(email_pattern, user_email):
                 st_error_centered('Неверный формат электронной почты')
             else:
@@ -43,18 +41,18 @@ with center_col:
                 st.session_state.email_completed = True
         
         if st.button('Отправить код верификации', width='stretch'):
-            
-
-            with st.spinner('Отправка письма ...'):
-                subject = 'Код верификации'
-                code = generate_verification_code()
-                content = f'Ваш код верификации электронной почты в Python Gym {code}'
-                success = send_email(email_input, content, subject)
-            
-            left_col, center_col, right_col = st.columns([0.3, 0.4, 0.3])
-            with center_col:
-                apply_otp_style('Код')
-                code_input = st.text_input('Код', 
+            if not st.session_state.email_completed:
+                st_error_centered('Не указан адрес электронной почты')
+            else:
+                with st.spinner('Отправка письма ...'):
+                    subject = 'Код верификации'
+                    code = generate_verification_code()
+                    content = f'Ваш код верификации электронной почты в Python Gym: {code}'
+                    send_email(user_email, content, subject)
+                left_col, center_col, right_col = st.columns([0.3, 0.4, 0.3])
+                with center_col:
+                    apply_otp_style('Код')
+                    code_input = st.text_input('Код', 
                                            label_visibility='collapsed',
                                            max_chars=4)
         user_login = st.text_input('Придумайте имя пользователя',  
