@@ -26,14 +26,14 @@ with center_col:
                                           options=df_students['full_name'],
                                           index=0)
         
-        raw_email_input = st.text_input('Электронная почта',  
+        raw_user_email = st.text_input('Электронная почта',  
                                         placeholder='example@mail.com', 
                                         icon=':material/mail:')
         
-        if raw_email_input:
+        if raw_user_email:
             email_pattern = r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$'
-            email_input = raw_email_input.strip()
-            if not re.match(email_pattern, email_input):
+            user_email = raw_user_email.strip()
+            if not re.match(email_pattern, user_email):
                 st.error('Неверный формат электронной почты')
         
         if st.button('Отправить код верификации', width='stretch'):
