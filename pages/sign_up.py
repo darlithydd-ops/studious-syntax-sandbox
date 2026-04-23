@@ -2,6 +2,7 @@ import re
 import streamlit as st
 from utils import generate_verification_code, send_email, apply_otp_style
 from utils import apply_caveat_style, apply_comic_style, apply_pixel_style
+from utils import centered_error
 
 conn = st.connection('postgresql', type='sql')
 
@@ -34,7 +35,7 @@ with center_col:
             email_pattern = r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$'
             user_email = raw_user_email.strip()
             if not re.match(email_pattern, user_email):
-                st.error('Неверный формат электронной почты')
+                centered_error('Неверный формат электронной почты')
         
         if st.button('Отправить код верификации', width='stretch'):
 
