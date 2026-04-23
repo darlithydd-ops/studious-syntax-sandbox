@@ -53,7 +53,9 @@ with center_col:
         user_login = st.text_input('Придумайте имя пользователя',  
                                         placeholder='Придумайте имя пользователя', 
                                         icon=':material/person:')
-        #user_password
+        user_password = st.text_input('Установите пароль',  
+                                        placeholder='Установите пароль', 
+                                        icon=':material/password:')
         
             
 
