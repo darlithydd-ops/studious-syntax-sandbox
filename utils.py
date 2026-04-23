@@ -44,8 +44,6 @@ def apply_otp_style(label_text="Код"):
     """
     st.markdown(style, unsafe_allow_html=True)
 
-import streamlit as st
-
 def st_funny(text, size=40, color="#FF4B4B", center=True):
 
     align = "center" if center else "left"
