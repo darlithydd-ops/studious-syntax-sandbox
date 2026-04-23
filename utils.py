@@ -31,15 +31,25 @@ def generate_verification_code():
 
 import streamlit as st
 
-def apply_otp_style():
-    st.markdown("""
-        <style>
-        /* Стиль применится ТОЛЬКО к инпутам с ограничением в 4 символа */
-        input[maxlength="4"] {
-            text-align: center !important;
-            font-size: 40px !important;
-            letter-spacing: 15px !important;
-            font-family: monospace !important;
-        }
-        </style>
-    """, unsafe_allow_html=True)
+import streamlit as st
+
+def apply_otp_style(label_text="Код"):
+    """
+    Применяет стиль только к полю с конкретным заголовком.
+    """
+    style = f"""
+    <style>
+    /* Ищем инпут, у которого aria-label совпадает с заголовком поля */
+    input[aria-label="{label_text}"] {{
+        text-align: center !important;
+        font-size: 40px !important;
+        letter-spacing: 15px !important;
+        font-weight: bold !important;
+        font-family: monospace !important;
+        background-color: #f0f2f6 !important;
+        border-radius: 10px !important;
+    }}
+    </style>
+    """
+    st.markdown(style, unsafe_allow_html=True)
+
