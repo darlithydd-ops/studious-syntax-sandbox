@@ -26,7 +26,7 @@ with center_col:
                                           options=df_students['full_name'],
                                           index=0)
         
-        raw_email_input = st.text_input('Почта (необходима для восстановления доступа)',  
+        raw_email_input = st.text_input('Электронная почта',  
                                         placeholder='example@mail.com', 
                                         icon=':material/mail:')
         
