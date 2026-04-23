@@ -12,7 +12,7 @@ with center_col:
 
         #st.markdown("<h3 style='text-align: center;'>Python Gym</h3>", unsafe_allow_html=True)
         
-        st_funny('Python Gym')
+        apply_comic_style('Python Gym')
         apply_caveat_style('Python Gym')
         
         df_groups = conn.query('SELECT id, name FROM groups ORDER BY name;')
