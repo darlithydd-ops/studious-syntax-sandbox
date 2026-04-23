@@ -35,6 +35,7 @@ def apply_otp_style(label_text="Код"):
     <style>
     input[aria-label='{label_text}'] {{
         text-align: center !important;
+        font-family: monospace !important;
         letter-spacing: 12px !important;
         margin-right: -12px !important;
     }}
