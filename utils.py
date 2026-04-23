@@ -58,7 +58,7 @@ def st_funny(text, size=40, color="#FF4B4B", center=True):
         color: {color};
         text-align: {align};
         font-weight: 700;
-        margin: 10px 0px;
+        margin: 10px 100px;
     }}
     </style>
     <div class="funny-container">{text}</div>
