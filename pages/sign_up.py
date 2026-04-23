@@ -24,7 +24,7 @@ with center_col:
             
         selected_full_name = st.selectbox('Имя',
                                           options=df_students['full_name'],
-                                          index=о)
+                                          index=0)
         
         raw_email_input = st.text_input('Почта (необходима для восстановления доступа)',  
                                         placeholder='example@mail.com', 
