@@ -34,10 +34,16 @@ with center_col:
         if raw_user_email:
             email_pattern = r'^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$'
             user_email = raw_user_email.strip()
+            if 'email_completed' not in st.session_state:
+                st.session_state.email_completed = True
             if not re.match(email_pattern, user_email):
                 st_error_centered('Неверный формат электронной почты')
+            else:
+                if 'email_completed' not in st.session_state:
+                st.session_state.email_completed = True
         
         if st.button('Отправить код верификации', width='stretch'):
+            
 
             with st.spinner('Отправка письма ...'):
                 subject = 'Код верификации'
