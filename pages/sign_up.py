@@ -44,7 +44,7 @@ with center_col:
                 content = f'Ваш код верификации электронной почты в Python Gym {code}'
                 success = send_email(email_input, content, subject)
             
-            left_col, center_col, right_col = st.columns([1, 1, 1])
+            left_col, center_col, right_col = st.columns([0.3, 0.4, 0.3])
             with center_col:
                 apply_otp_style('Код')
                 code_input = st.text_input('Код', 
