@@ -50,6 +50,11 @@ with center_col:
                 code_input = st.text_input('Код', 
                                            label_visibility='collapsed',
                                            max_chars=4)
+        user_login = st.text_input('Придумайте имя пользователя',  
+                                        placeholder='Придумайте имя пользователя', 
+                                        icon=':material/person:')
+        #user_password
+        
             
 
 
