@@ -1,7 +1,7 @@
 import re
 import streamlit as st
 from utils import generate_verification_code, send_email, apply_otp_style
-from utils import st_funny, st_pixel
+from utils import apply_caveat_style, st_funny, st_pixel
 
 conn = st.connection('postgresql', type='sql')
 
@@ -13,7 +13,7 @@ with center_col:
         #st.markdown("<h3 style='text-align: center;'>Python Gym</h3>", unsafe_allow_html=True)
         
         st_funny('Python Gym')
-        #st_pixel('Python Sandbox')
+        apply_caveat_style('Python Gym')
         
         df_groups = conn.query('SELECT id, name FROM groups ORDER BY name;')
         
