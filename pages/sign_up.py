@@ -1,6 +1,6 @@
 import re
 import streamlit as st
-from utils import generate_verification_code, send_email, apply_otp_style
+from utils import generate_verification_code, send_email, apply_otp_style, st_funny
 
 conn = st.connection('postgresql', type='sql')
 
@@ -11,6 +11,7 @@ with center_col:
 
         st.markdown("<h3 style='text-align: center;'>Python Gym</h3>", 
                     unsafe_allow_html=True)
+        st_funny('Python Gym')
         
         df_groups = conn.query('SELECT id, name FROM groups ORDER BY name;')
         
