@@ -65,5 +65,23 @@ def st_funny(text, size=40, color="#FF4B4B", center=True):
     """
     st.markdown(style, unsafe_allow_html=True)
 
+def apply_press_start_2p_style(text, size=40, color="#FF4B4B", center=True):
+
+    align = "center" if center else "left"
+    style = f"""
+    <style>
+    @import url('https://googleapis.com');
+    .press_start_2p-container {{
+        font-family: 'Press Start 2P', cursive;
+        font-size: {size}px;
+        color: {color};
+        text-align: {align};
+        font-weight: 700;
+        margin: 10px 0px;
+    }}
+    </style>
+    <div class='press_start_2p-container'>{text}</div>
+    """
+    st.markdown(style, unsafe_allow_html=True)
 
 
