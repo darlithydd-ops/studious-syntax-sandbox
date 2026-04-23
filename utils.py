@@ -50,7 +50,7 @@ def st_funny(text, size=40, color="#FF4B4B", center=True):
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
     .funny-container {{
-        font-family: 'Comic Neue', cursive !important;
+        font-family: 'Comic Neue' !important;
         font-size: {size}px !important;
         color: {color} !important;
         text-align: {align} !important;
