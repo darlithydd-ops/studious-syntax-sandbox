@@ -42,9 +42,7 @@ def apply_otp_style(label_text="Код"):
     /* Ищем инпут, у которого aria-label совпадает с заголовком поля */
     input[aria-label="{label_text}"] {{
         text-align: center !important;
-        font-size: 40px !important;
         letter-spacing: 15px !important;
-        font-weight: bold !important;
         font-family: monospace !important;
         background-color: #f0f2f6 !important;
         border-radius: 10px !important;
