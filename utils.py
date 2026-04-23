@@ -31,30 +31,15 @@ def generate_verification_code():
 
 import streamlit as st
 
-def add_otp_focus_script():
-    return st.components.v1.html(
-        """
-        <script>
-        const handleOtpFocus = () => {
-            const doc = window.parent.document;
-            const allInputs = Array.from(doc.querySelectorAll('input'));
-            const otpInputs = allInputs.filter(input => input.maxLength === 1);
-            otpInputs.forEach((input, index) => {
-                input.oninput = (e) => {
-                    if (e.target.value.length === 1 && index < otpInputs.length - 1) {
-                        otpInputs[index + 1].focus();
-                    }
-                };
-                input.onkeydown = (e) => {
-                    if (e.key === 'Backspace' && e.target.value.length === 0 && index > 0) {
-                        otpInputs[index - 1].focus();
-                    }
-                };
-            });
-        };
-        setTimeout(handleOtpFocus, 300);
-        setTimeout(handleOtpFocus, 1000);
-        </script>
-        """,
-        height=0,
-    )
+def apply_otp_style():
+    st.markdown("""
+        <style>
+        /* Стиль применится ТОЛЬКО к инпутам с ограничением в 4 символа */
+        input[maxlength="4"] {
+            text-align: center !important;
+            font-size: 40px !important;
+            letter-spacing: 15px !important;
+            font-family: monospace !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
