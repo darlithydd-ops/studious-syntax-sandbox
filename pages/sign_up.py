@@ -56,6 +56,9 @@ with center_col:
         user_password = st.text_input('Установите пароль',  
                                         placeholder='Установите пароль', 
                                         icon=':material/lock:')
+        if st.button('Создать аккаунт', width='stretch'):
+            pass
+
         
             
 
