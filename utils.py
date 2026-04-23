@@ -65,23 +65,35 @@ def st_funny(text, size=40, color="#FF4B4B", center=True):
     """
     st.markdown(style, unsafe_allow_html=True)
 
-def apply_press_start_2p_style(text, size=40, color="#FF4B4B", center=True):
+import streamlit as st
 
-    align = "center" if center else "left"
-    style = f"""
-    <style>
-    @import url('https://googleapis.com');
-    .press_start_2p-container {{
-        font-family: 'Press Start 2P', cursive;
-        font-size: {size}px;
-        color: {color};
-        text-align: {align};
-        font-weight: 700;
-        margin: 10px 0px;
-    }}
-    </style>
-    <div class='press_start_2p-container'>{text}</div>
+def st_pixel(text, size=20, color="#00FF00", center=True, shadow=True):
     """
-    st.markdown(style, unsafe_allow_html=True)
+    Выводит текст в стиле ретро-игр (8-bit).
+    - shadow: добавляет небольшой эффект тени для объема.
+    """
+    align = "center" if center else "left"
+    # Эффект тени, если shadow=True
+    text_shadow = "2px 2px #000000" if shadow else "none"
+    
+    st.markdown(
+        f"""
+        <style>
+        @import url('https://googleapis.com');
+        
+        .pixel-text {{
+            font-family: 'Press Start 2P', cursive;
+            font-size: {size}px;
+            color: {color};
+            text-align: {align};
+            text-shadow: {text_shadow};
+            line-height: 1.5;
+            margin: 20px 0px;
+        }}
+        </style>
+        <p class="pixel-text">{text}</p>
+        """,
+        unsafe_allow_html=True
+    )
 
 
