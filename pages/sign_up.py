@@ -1,7 +1,7 @@
 import re
 import streamlit as st
 from utils import generate_verification_code, send_email, apply_otp_style
-from utils import 
+from utils import st_funny
 
 conn = st.connection('postgresql', type='sql')
 
