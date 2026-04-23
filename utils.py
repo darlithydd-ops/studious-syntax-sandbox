@@ -29,20 +29,13 @@ def generate_verification_code():
     
     return ''.join(secrets.choice(string.digits) for _ in range(4))
 
-import streamlit as st
-
-import streamlit as st
-
 def apply_otp_style(label_text="Код"):
-    """
-    Применяет стиль только к полю с конкретным заголовком.
-    """
+    
     style = f"""
     <style>
-    /* Ищем инпут, у которого aria-label совпадает с заголовком поля */
-    input[aria-label="{label_text}"] {{
+    input[aria-label='{label_text}'] {{
         text-align: center !important;
-        letter-spacing: 15px !important;
+        letter-spacing: 10px !important;
         font-family: monospace !important;
         background-color: #f0f2f6 !important;
         border-radius: 10px !important;
