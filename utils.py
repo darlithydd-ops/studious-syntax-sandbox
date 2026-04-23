@@ -83,4 +83,21 @@ def st_pixel(text, size=20, color="#00FF00", center=True):
         """,
         unsafe_allow_html=True
     )
-
+    
+def apply_caveat_style(text, size=40, color='#FF4B4B', center=True):
+    align = 'center' if center else 'left'
+    style = f"""
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+    .сaveat-container {{
+        font-family: 'Caveat', cursive !important;
+        font-size: {size}px !important;
+        color: {color} !important;
+        text-align: {align} !important;
+        font-weight: 700 !important;
+        margin: 10px 0px;
+    }}
+    </style>
+    <div class='caveat-container'>{text}</div>
+    """
+    st.markdown(style, unsafe_allow_html=True)
