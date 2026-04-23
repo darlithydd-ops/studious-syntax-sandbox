@@ -16,7 +16,7 @@ with center_col:
         
         selected_group = st.selectbox('Группа',
                                       options=df_groups['name'],
-                                      index=0,
+                                      index=None,
                                       placeholder='Группа',
                                       label_visibility='collapsed')
         
