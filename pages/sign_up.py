@@ -55,7 +55,7 @@ with center_col:
                                         icon=':material/person:')
         user_password = st.text_input('Установите пароль',  
                                         placeholder='Установите пароль', 
-                                        icon=':material/password:')
+                                        icon=':material/lock:')
         
             
 
