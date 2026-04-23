@@ -10,8 +10,8 @@ left_col, center_col, right_col = st.columns([0.35, 0.3, 0.35])
 with center_col:
     with st.container(border=True):
 
-        st.markdown("<h3 style='text-align: center;'>Python Gym</h3>", 
-                    unsafe_allow_html=True)
+        #st.markdown("<h3 style='text-align: center;'>Python Gym</h3>", unsafe_allow_html=True)
+        
         st_funny('Python Gym')
         
         df_groups = conn.query('SELECT id, name FROM groups ORDER BY name;')
