@@ -1,6 +1,6 @@
 import re
 import streamlit as st
-from utils import generate_verification_code, send_email, add_otp_focus_script
+from utils import generate_verification_code, send_email
 
 conn = st.connection('postgresql', type='sql')
 
@@ -44,31 +44,17 @@ with center_col:
                 content = f'Ваш код верификации электронной почты в Python Gym {code}'
                 success = send_email(email_input, content, subject)
             
-            with st.form('email verification form'):
-                c_1, c_2, c_3, c_4, c_5, c_6 = st.columns([1, 1, 1, 1, 1, 1])
-                with c_2:
-                    digit_1 = st.text_input('digit_1', 
-                                            label_visibility='collapsed', 
-                                            max_chars=1, 
-                                            key='opt_1')
-                with c_3:
-                    digit_2 = st.text_input('digit_2', 
-                                            label_visibility='collapsed', 
-                                            max_chars=1, 
-                                            key='opt_2')
-                with c_4:
-                    digit_3 = st.text_input('digit_3', 
-                                            label_visibility='collapsed', 
-                                            max_chars=1, 
-                                            key='opt_3')
-                with c_5:
-                    digit_4 = st.text_input('digit_4', 
-                                            label_visibility='collapsed', 
-                                            max_chars=1, 
-                                            key='opt_4')
+            code_input = st.text_input('Код', 
+                                 label_visibility='collapsed',
+                                 max_chars=4)
+
+
+
+
+            
+          
                 
-                submitted = st.form_submit_button("Подтвердить код")
-                add_otp_focus_script()
+              
  
         
   
