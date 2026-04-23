@@ -1,6 +1,6 @@
 import re
 import streamlit as st
-from utils import generate_verification_code, send_email, add_otp_focus_script()
+from utils import generate_verification_code, send_email, add_otp_focus_script
 
 conn = st.connection('postgresql', type='sql')
 
