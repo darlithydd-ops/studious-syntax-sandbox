@@ -29,27 +29,31 @@ def generate_verification_code():
     
     return ''.join(secrets.choice(string.digits) for _ in range(4))
 
+import streamlit as st
+
 def add_otp_focus_script():
     return st.components.v1.html(
         """
         <script>
-        setTimeout(() => {
-            const allInputs = window.parent.document.querySelectorAll('input');
-            const otpInputs = Array.from(allInputs).filter(input => input.id.includes('otp_'));
-            
+        const handleOtpFocus = () => {
+            const doc = window.parent.document;
+            const allInputs = Array.from(doc.querySelectorAll('input'));
+            const otpInputs = allInputs.filter(input => input.maxLength === 1);
             otpInputs.forEach((input, index) => {
-                input.addEventListener('input', () => {
-                    if (input.value.length === 1 && index < otpInputs.length - 1) {
+                input.oninput = (e) => {
+                    if (e.target.value.length === 1 && index < otpInputs.length - 1) {
                         otpInputs[index + 1].focus();
                     }
-                });
-                input.addEventListener('keydown', (e) => {
-                    if (e.key === 'Backspace' && input.value.length === 0 && index > 0) {
+                };
+                input.onkeydown = (e) => {
+                    if (e.key === 'Backspace' && e.target.value.length === 0 && index > 0) {
                         otpInputs[index - 1].focus();
                     }
-                });
+                };
             });
-        }, 500); 
+        };
+        setTimeout(handleOtpFocus, 300);
+        setTimeout(handleOtpFocus, 1000);
         </script>
         """,
         height=0,
