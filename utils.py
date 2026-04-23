@@ -37,7 +37,6 @@ def apply_otp_style(label_text="Код"):
         text-align: center !important;
         font-family: monospace !important;
         letter-spacing: 12px !important;
-        text-indent: 12px !important;
         caret-color: transparent !important;
     }}
     </style>
