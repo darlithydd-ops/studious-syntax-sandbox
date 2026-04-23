@@ -47,18 +47,13 @@ def apply_otp_style(label_text="Код"):
 import streamlit as st
 
 def st_funny(text, size=40, color="#FF4B4B", center=True):
-    """
-    Применяет стиль Comic Neue к конкретному тексту.
-    """
-    # Выравнивание
+
     align = "center" if center else "left"
-    
-    # Ссылка на шрифт и сам стиль
     style = f"""
     <style>
     @import url('https://googleapis.com');
     .funny-container {{
-        font-family: 'Comic Neue', cursive;
+        font-family: 'Comic Neue';
         font-size: {size}px;
         color: {color};
         text-align: {align};
