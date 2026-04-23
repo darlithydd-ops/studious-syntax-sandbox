@@ -1,6 +1,6 @@
 import re
 import streamlit as st
-from utils import generate_verification_code, send_email
+from utils import generate_verification_code, send_email, add_otp_focus_script()
 
 conn = st.connection('postgresql', type='sql')
 
@@ -44,27 +44,29 @@ with center_col:
                 content = f'Ваш код верификации электронной почты в Python Gym {code}'
                 success = send_email(email_input, content, subject)
             
-            with st.form('jhn'):
-                c_1, c_2, c_4, c_6, c_8, c_9 = st.columns([1, 1, 1, 1, 1, 1])
+            with st.form():
+                c_1, c_2, c_3, c_4, c_5, c_6 = st.columns([1, 1, 1, 1, 1, 1])
                 with c_2:
                     digit_1 = st.text_input('digit_1', 
                                             label_visibility='collapsed', 
                                             max_chars=1, 
-                                            key='d1')
-                with c_4:
+                                            key='opt_1')
+                with c_3:
                     digit_2 = st.text_input('digit_2', 
                                             label_visibility='collapsed', 
                                             max_chars=1, 
-                                            key='d2')
-                with c_6:
+                                            key='opt_2')
+                with c_4:
                     digit_3 = st.text_input('digit_3', 
                                             label_visibility='collapsed', 
                                             max_chars=1, 
-                                            key='d3')
-                with c_8:
-                    digit_4 = st.text_input('digit_4', label_visibility='collapsed', 
+                                            key='opt_3')
+                with c_5:
+                    digit_4 = st.text_input('digit_4', 
+                                            label_visibility='collapsed', 
                                             max_chars=1, 
-                                            key='d4')
+                                            key='opt_4')
+                add_otp_focus_script()
                 submitted = st.form_submit_button("Подтвердить код")
  
         
