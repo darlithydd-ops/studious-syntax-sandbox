@@ -53,7 +53,7 @@ def st_funny(text, size=40, color="#FF4B4B", center=True):
     <style>
     @import url('https://googleapis.com');
     .funny-container {{
-        font-family: 'Comic Neue';
+        font-family: 'Comic Neue' !important;
         font-size: {size}px;
         color: {color};
         text-align: {align};
