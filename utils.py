@@ -89,7 +89,7 @@ def apply_caveat_style(text, size=40, color='#FF4B4B', center=True):
     style = f"""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
-    .сaveat-container {{
+    .caveat-container {{
         font-family: 'Caveat', cursive !important;
         font-size: {size}px !important;
         color: {color} !important;
