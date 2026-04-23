@@ -9,7 +9,7 @@ left_col, center_col, right_col = st.columns([0.35, 0.3, 0.35])
 
 with center_col:
     with st.container(border=True):
-        apply_caveat_style('Python Gym', color='#E6E6FA')
+        apply_caveat_style('Python Gym', color='#D8BFD8')
         df_groups = conn.query('SELECT id, name FROM groups ORDER BY name;')
         
         selected_group = st.selectbox('Группа',
